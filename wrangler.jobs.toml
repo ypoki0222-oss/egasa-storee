@@ -1,0 +1,19 @@
+name = "egasa-store-jobs"
+main = "src/server/jobs.ts"
+compatibility_date = "2026-10-01"
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+ENVIRONMENT = "production"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "store"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# Egasa no-card edition: KV namespace replaces R2 for encrypted backups.
+[[kv_namespaces]]
+binding = "BACKUPS"
+id = "STORED_IN_EGASA_NOCARD_BACKUPS"

@@ -1,0 +1,64 @@
+{
+  "products": {
+    "prod_leather_gloves": {
+      "id": "prod_leather_gloves",
+      "name": "قفازات جلدية فاخرة",
+      "slug": "leather-gloves",
+      "price": 199,
+      "originalPrice": 299,
+      "category": "ملابس وإكسسوارات",
+      "description": "قفازات جلدية طبيعية بتصميم أنيق تصلح للاستخدام اليومي والمناسبات.",
+      "features": ["جلد طبيعي 100%", "بطانة قطنية دافئة", "ضمان سنة"],
+      "inStock": true,
+      "badge": "الأكثر مبيعاً",
+      "rating": 4.8,
+      "reviewsCount": 12,
+      "sizesEnabled": true,
+      "sizes": ["M", "L"],
+      "colorsEnabled": true,
+      "colors": [
+        { "name": "أسود", "hex": "#000000" },
+        { "name": "بني", "hex": "#8B4513" }
+      ],
+      "fabrics": ["جلد طبيعي"],
+      "customImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+      "galleryImages": [
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+        "/old-uploads/glove-back.jpg"
+      ],
+      "pageTemplate": "modern",
+      "reviewsEnabled": true,
+      "customReviews": [
+        { "author": "أحمد العلوي", "rating": 5, "text": "جودة ممتازة والتوصيل كان سريعاً.", "date": "2024-03-12T10:00:00Z" }
+      ],
+      "hidden": false,
+      "language": "ar"
+    }
+  },
+  "orders": {
+    "ord_001": {
+      "id": "ord_001",
+      "customerName": "سعاد بناني",
+      "phone": "0600112233",
+      "city": "الدار البيضاء",
+      "address": "زنقة 12، حي المعاريف",
+      "items": [
+        { "productId": "prod_leather_gloves", "quantity": 2, "selectedSize": "L", "selectedColor": "أسود", "price": 199 }
+      ],
+      "status": "delivered",
+      "total": 398,
+      "createdAt": "2024-05-01T14:22:00Z"
+    }
+  },
+  "settings": {
+    "global": {
+      "storeName": "متجر إجاسة",
+      "whatsapp": "212600000000",
+      "currency": "MAD",
+      "announcement": "شحن مجاني للطلبات فوق 300 درهم",
+      "facebookPixel": "FB123456789",
+      "freeShippingThreshold": 300,
+      "googleSheetsWebhook": "https://script.google.com/macros/s/AKfycbx/exec"
+    }
+  }
+}

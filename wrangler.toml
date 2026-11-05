@@ -1,0 +1,44 @@
+name = "egasa-storee"
+main = "worker/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+workers_dev = true
+
+[assets]
+directory = "dist"
+binding = "ASSETS"
+html_handling = "none"
+run_worker_first = ["/", "/admin", "/admin/*", "/api/*", "/products/*", "/shop/*", "/offers/*", "/checkout", "/policies/*", "/media/*", "/demo/*", "/sitemap.xml", "/robots.txt"]
+
+[triggers]
+crons = ["* * * * *"]
+
+# Egasa no-card edition: product images → Firebase Storage (Spark free, no card).
+# Encrypted backups → a single KV namespace (rare writes, small). No R2 at all.
+#   npx wrangler kv namespace create BACKUPS  → paste id below
+#   FIREBASE_STORAGE_BUCKET: اسم قربة التخزين، مثلاً egasa-87fcd.appspot.com
+[vars]
+ENVIRONMENT = "production"
+MEDIA_ORIGIN = "/media"
+INSTALLATION_MODE = "cloudflare-button"
+FIREBASE_STORAGE_BUCKET = "egasa-87fcd.appspot.com"
+
+[[d1_databases]]
+binding = "DB"
+migrations_dir = "migrations"
+
+[[kv_namespaces]]
+binding = "BACKUPS"
+id = "100a892e08f04e80a4f1a559377a1a3f"
+
+[[durable_objects.bindings]]
+name = "PASSWORD_HASHER"
+class_name = "PasswordHasher"
+
+[[durable_objects.bindings]]
+name = "OPERATIONS"
+class_name = "StoreOperations"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["PasswordHasher", "StoreOperations"]

@@ -1,0 +1,22 @@
+name = "egasa-store"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["global_fetch_strictly_public"]
+pages_build_output_dir = "dist"
+
+[vars]
+ENVIRONMENT = "production"
+MEDIA_ORIGIN = "https://media.example.com"
+APP_ORIGIN = "https://store.example.com"
+AUTH_CPU_VERIFIED = "false"
+FIREBASE_STORAGE_BUCKET = "egasa-87fcd.appspot.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "store"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+# Egasa no-card edition: encrypted backups only → KV. Images → Firebase Storage.
+[[kv_namespaces]]
+binding = "BACKUPS"
+id = "STORED_IN_EGASA_NOCARD_BACKUPS"
